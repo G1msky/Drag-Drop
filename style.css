@@ -1,0 +1,359 @@
+.wrapper {
+  background-color: #f0f0f0;
+}
+.projects__content {
+  padding: 40px 0;
+}
+.projects__content > .container > .courses__dashboard {
+  padding: 0;
+  margin-bottom: 0;
+}
+.projects__content > .container > .courses__dashboard > form {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 60px 50px 40px 50px;
+}
+.projects__content > .container > .courses__dashboard > form > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.projects__content > .container > .courses__dashboard > form > div > input {
+  margin-bottom: 0;
+}
+.projects__content > .container > .courses__dashboard > form > div > div {
+  padding: 38px 0 26px 0;
+}
+.projects__content > .container > .courses__dashboard > form > div > p {
+  margin: 0;
+  padding: 0 24px;
+  max-width: inherit;
+}
+.projects__courses {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  pointer-events: all;
+  background: #ccc8c8;
+}
+@media (max-width: 1220px) {
+  .projects__courses {
+    grid-template-columns: 1fr;
+  }
+}
+.projects__courses.open-group {
+  grid-template-columns: 1fr;
+}
+.projects__courses-group {
+  transition: height 0.3s ease-in;
+  min-height: 100px;
+  border-radius: 12px;
+  background: #828391;
+}
+.projects__courses-group.created {
+}
+.projects__courses-group.active-group {
+  position: relative;
+  background: unset;
+}
+.projects__courses-group.active-group::before {
+  content: "";
+  background: #fff;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  left: 0;
+  width: 126px;
+  height: 30px;
+}
+.projects__courses-group.active-group::after {
+  content: "";
+  position: absolute;
+  background: #c2c2c2;
+  border-radius: 10px;
+  z-index: 2;
+  top: 0;
+  left: 20px;
+  width: 30px;
+  height: 5px;
+}
+.projects__courses-group.open-group {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  background: #f9f9f9;
+}
+.projects__courses-group.open-group .course-draggable:not(:nth-child(1)) {
+  display: flex;
+}
+.projects__courses-group .course-draggable:not(:nth-child(1)) {
+  display: none;
+}
+.projects__courses-group .course-draggable.dragging {
+  opacity: 0.5;
+  transition: opacity 1s ease;
+}
+.projects__course {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+}
+.projects__course_head {
+  display: flex;
+  justify-content: space-between;
+}
+.projects__course_title {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: #2a2a2a;
+  width: 50%;
+}
+.projects__course_status {
+  background: linear-gradient(
+    180deg,
+    rgba(63, 214, 188, 0.15) 0%,
+    rgba(59, 203, 178, 0) 100%
+  );
+  border-radius: 20px;
+  align-self: flex-start;
+}
+.projects__course_status.wait {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 204, 71, 0.15) 0%,
+    rgba(255, 204, 71, 0) 100%
+  );
+}
+.projects__course_status.wait > button {
+  color: #ffcc47;
+}
+.projects__course_status > button {
+  background-color: transparent;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #3bcbb2;
+  padding: 4px 10px;
+}
+.projects__course_price > span {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #3bcbb2;
+}
+.projects__course_description {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #c2c2c2;
+  margin-bottom: 10px;
+}
+.projects__course_description p {
+  pointer-events: none;
+}
+.projects__course_students {
+  border-bottom: 2px solid #3bcbb2;
+  padding-bottom: 4px;
+  align-self: flex-start;
+}
+.projects__course_students > a {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  color: #3bcbb2;
+  display: flex;
+  gap: 6px;
+}
+.projects__course_students > a::after {
+  content: url("/img/arrow-right.png");
+}
+.projects__course_control {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.projects__course_control > a > button {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+}
+.projects__course_control > a > button.wait {
+  background-color: #ffcc47;
+}
+.school__nav {
+  padding-bottom: 0;
+}
+/* Popup */
+.popup.students__popup.active {
+  max-height: 540px;
+}
+.students__popup {
+  overflow: auto;
+}
+.students__popup:hover {
+  transition: opacity, 0.5s ease;
+}
+.students__popup.active {
+  max-width: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.students__popup_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.students__popup_head > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.students__popup_head > div > h1 {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: #2a2a2a;
+}
+.students__popup_head > div > span {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  color: #3bcbb2;
+}
+.students__popup_nav > form {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+.students__popup_nav > form > input {
+  flex-basis: 75%;
+}
+.students__popup_nav > form > button {
+  padding: 11.5px 0px;
+  border-radius: 8px;
+  flex-basis: 25%;
+}
+.students__popup_content > div:last-child {
+  border-bottom: none;
+}
+.student {
+  display: flex;
+  align-items: center;
+  gap: 120px;
+  padding: 32px 0;
+  border-bottom: 1px solid #c2c2c2;
+}
+@media (max-width: 1240px) {
+  .student {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+}
+.student__info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-basis: 25%;
+}
+.student__info > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.student__info > div:nth-child(2) > span {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #2a2a2a;
+}
+.student__info > div:nth-child(2) > a {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #3bcbb2;
+}
+.student__avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #3bcbb2;
+}
+.student__progress {
+  display: flex;
+  gap: 10px;
+  flex-basis: 25%;
+}
+.student__progress > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.student__progress_bar {
+  width: 4px;
+  height: auto;
+  background-color: #ebebeb;
+  transform: rotate(180deg);
+}
+.student__progress_bar > div {
+  height: 90%;
+  background-color: #3bcbb2;
+}
+.student__progress_percent {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  color: #3bcbb2;
+}
+.student__progress_text {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #2a2a2a;
+}
+.student__average {
+  display: flex;
+  gap: 10px;
+  flex-basis: 25%;
+}
+.student__delete {
+  flex-basis: 25%;
+}
+.student__delete > button {
+  padding: 10px 20px;
+  border: 1px solid #c2c2c2;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+}
